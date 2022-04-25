@@ -10,11 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "email-validator": "^2.0.4",
     "express": "^4.17.3",
+    "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.0",
     "mongoose-unique-validator": "^3.0.0",
-    "multer": "^1.4.4"
+    "multer": "^1.4.4",
+    "nodemailer": "^6.7.3"
   },
   "devDependencies": {
     "@cypress/schematic": "^1.6.0"

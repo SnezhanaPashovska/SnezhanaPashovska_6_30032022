@@ -2,6 +2,7 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer')
 
 //--Signup function--//
 
@@ -25,12 +26,12 @@ exports.login = (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then(user => {
       if (!user) {
-        return res.status(401).json({ error: 'Utilisateur non trouvé !' });
+        return res.status(401).json({ error: 'Invalid user!' });
       }
       bcrypt.compare(req.body.password, user.password)
         .then(valid => {
           if (!valid) {
-            return res.status(401).json({ error: 'Mot de passe incorrect !' });
+            return res.status(401).json({ error: 'Incorrect password !' });
           }
           res.status(200).json({
             userId: user._id,
@@ -45,3 +46,4 @@ exports.login = (req, res, next) => {
     })
     .catch(error => res.status(500).json({ error }));
 };
+
