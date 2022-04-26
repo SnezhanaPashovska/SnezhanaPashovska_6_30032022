@@ -3,6 +3,25 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer')
+const MaskData = require('maskdata')
+
+//--Mask the email address--//
+
+/* const emailMask2Options = {
+  maskWith: "*", 
+  unmaskedStartCharactersBeforeAt: 3,
+  unmaskedEndCharactersAfterAt: 2,
+  maskAtTheRate: false
+}; */
+
+//--Mask password--//
+/* const maskPasswordOptions = {
+  maskWith: "*",
+  maxMaskedCharacters: 30,
+  unmaskedStartCharacters: 0,
+  unmaskedEndCharacters: 0
+}; */
+
 
 //--Signup function--//
 
@@ -10,7 +29,7 @@ exports.signup = (req, res, next) => {
   bcrypt.hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
-        email: req.body.email,
+        email: req.body.email, 
         password: hash
       });
       user.save()

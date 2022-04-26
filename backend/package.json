@@ -10,14 +10,23 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "custom-env": "^2.0.1",
     "email-validator": "^2.0.4",
     "express": "^4.17.3",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.4.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
+    "logger": "^0.0.1",
+    "maskdata": "^1.1.8",
+    "mongo-sanitize": "^1.1.0",
     "mongoose": "^6.3.0",
     "mongoose-unique-validator": "^3.0.0",
     "multer": "^1.4.4",
-    "nodemailer": "^6.7.3"
+    "nocache": "^3.0.3",
+    "nodemailer": "^6.7.3",
+    "password-validator": "^5.2.1",
+    "simple-node-logger": "^21.8.12"
   },
   "devDependencies": {
     "@cypress/schematic": "^1.6.0"
