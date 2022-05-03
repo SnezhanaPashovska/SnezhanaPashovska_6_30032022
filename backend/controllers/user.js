@@ -14,14 +14,6 @@ const MaskData = require('maskdata')
   maskAtTheRate: false
 }; */
 
-//--Mask password--//
-/* const maskPasswordOptions = {
-  maskWith: "*",
-  maxMaskedCharacters: 30,
-  unmaskedStartCharacters: 0,
-  unmaskedEndCharacters: 0
-}; */
-
 
 //--Signup function--//
 
@@ -29,7 +21,7 @@ exports.signup = (req, res, next) => {
   bcrypt.hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
-        email: req.body.email, 
+        email: req.body.email,
         password: hash
       });
       user.save()

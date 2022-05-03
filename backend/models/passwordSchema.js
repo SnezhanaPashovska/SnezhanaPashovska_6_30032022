@@ -10,8 +10,8 @@ passwordSchema
   .is().max(30)
   .has().uppercase()
   .has().lowercase()
-  .has().digits(1)
-  .symbols(1)
+  .has().digits()
+  .symbols()
   .has().not().spaces()
   .is().not().oneOf(['Passw0rd', 'Password123'])
 
